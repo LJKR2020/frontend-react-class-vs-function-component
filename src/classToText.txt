@@ -1,26 +1,42 @@
 class App extends React.Component {
+// Hier wordt de algemene react component aangesproken en uitgebreid met App
   constructor(props) {
+// hiermee wordt de algemene component aangesproken
     super(props);
+// hiermee wordt een onderdeel van het algemene component aangesproken
     this.state = {
+// hiermee wordt een state gemaakt in de betreffende class.
       isLightOn: true
+// hier wordt een key aangemaakt en op true gezet
     };
 
     this.handleClick = this.handleClick.bind(this);
+// om de functie handleClick te kunnen gebruiken
+// wordt deze gekoppeld aan de betreffende class met de bind-methode.
   }
 
   handleClick() {
+// hier wordt de functie handleClick aangemaakt.
     this.setState({
+// hier wordt aangegeven dat de state aangepast wordt met een nieuwe waarde.
       isLightOn: !this.state.isLightOn,
+// hier wordt de key van state aangepast met het tegenovergestelde van key van state.
+// false wordt true en true wordt false.
     });
   }
 
   render() {
+// hier wordt daadwerkelijk aangegeven dat er wat op de pagina gezet gaat worden
     return (
+// alles wat hier na komt wordt op de pagina gezet.
       <button
+// er wordt een button aangemaakt van het type gewone button.
         type="button"
         onClick={this.handleClick}
+// als de button aangeklikt wordt. word de handleClick functi in deze class aangesproken.
       >
         {this.state.isLightOn ? 'AAN' : 'UIT'}
+// hier wordt gekeken welke tekst er op de button moet komen, afhankelijk van of het licht al aan of uit is.
       </button>
     );
   }
